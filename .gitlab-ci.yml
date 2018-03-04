@@ -10,7 +10,6 @@ stages:
 build_ansible_image:
   stage: build
   script:
-    - cd ansible
     - docker build -t ovski/ansible .
 
 push_ansible_image:
