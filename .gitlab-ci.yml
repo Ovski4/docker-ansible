@@ -23,6 +23,8 @@ build_ansible_image:
 
 push_ansible_image:
   stage: push
+  only:
+    - tags
   before_script:
     - docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_PASSWORD
   script:
