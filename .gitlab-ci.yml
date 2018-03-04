@@ -7,12 +7,12 @@ stages:
   - build
   - push
 
-build_ansible_image:
+build:
   stage: build
   script:
     - docker build -t ovski/ansible .
 
-push_ansible_image:
+push:
   stage: push
   only:
     - tags
