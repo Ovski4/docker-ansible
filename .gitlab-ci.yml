@@ -1,0 +1,24 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - push
+
+build_ansible_image:
+  stage: build
+  script:
+    - cd ansible
+    - docker build -t ovski/ansible .
+
+push_ansible_image:
+  stage: push
+  only:
+    - tags
+  before_script:
+    - docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_PASSWORD
+  script:
+    - docker tag ovski/ansible ovski/ansible:$CI_COMMIT_TAG
+    - docker push ovski/ansible:$CI_COMMIT_TAG
