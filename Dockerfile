@@ -19,6 +19,7 @@ WORKDIR ansible
 RUN bash ./hacking/env-setup
 RUN easy_install pip
 RUN pip install -r ./requirements.txt
+RUN pip install packaging
 RUN make && make install
 
 CMD [ "ansible-playbook", "--version" ]
