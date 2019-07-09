@@ -26,6 +26,6 @@ RUN make && make install
 # Prevent warnings when running playbooks
 ENV ANSIBLE_LOCALHOST_WARNING False
 RUN mkdir /etc/ansible
-RUN echo "---" > /etc/ansible/hosts
+RUN touch /etc/ansible/hosts
 
 CMD [ "ansible-playbook", "--version" ]
