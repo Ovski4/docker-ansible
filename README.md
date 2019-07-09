@@ -7,8 +7,8 @@ Build
 -----
 
 ```
-git clone git@gitlab.com:ovski-projects/docker-images/ansible.git
-cd ansible
+git clone https://github.com/Ovski4/docker-ansible.git
+cd docker-ansible
 docker build -t ovski/ansible:v2.4.2.0-1 .
 ```
 
