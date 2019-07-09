@@ -1,4 +1,4 @@
-ARG DEBIAN_TAG=stretch-20180213
+ARG DEBIAN_TAG=stretch-20190610
 FROM debian:${DEBIAN_TAG}
 
 # Install ansible
@@ -9,7 +9,7 @@ RUN apt-get install -y \
     python \
     python-setuptools
 
-ARG ANSIBLE_TAG=v2.7.8
+ARG ANSIBLE_TAG=v2.8.2
 RUN git clone https://github.com/ansible/ansible.git /ansible \
     --branch ${ANSIBLE_TAG} \
     --single-branch \
