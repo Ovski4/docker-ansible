@@ -19,7 +19,7 @@ By default, the base container is debian/stretch-20190610 and the ansible versio
 To specify another debian version, and another ansible release, you can do the following:
 
 ```bash
-docker build -t ovski/ansible:v2.4.2.0-1 --build-arg="ANSIBLE_TAG=v1.4.2.0-1" --build-arg="DEBIAN_TAG=jessie"  .
+docker build -t ovski/ansible:v2.4.2.0-1 --build-arg="ANSIBLE_TAG=v1.4.2.0-1" --build-arg="DEBIAN_TAG=stretch"  .
 ```
 
 Usage

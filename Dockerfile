@@ -1,4 +1,4 @@
-ARG DEBIAN_TAG=stretch-20190610
+ARG DEBIAN_TAG=stretch
 FROM debian:${DEBIAN_TAG}
 
 # Install ansible
