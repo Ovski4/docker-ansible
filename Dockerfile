@@ -9,7 +9,7 @@ RUN apt-get install -y \
     python \
     python-setuptools
 
-ARG ANSIBLE_TAG=v2.8.2
+ARG ANSIBLE_TAG=v2.8.4
 RUN git clone https://github.com/ansible/ansible.git /ansible \
     --branch ${ANSIBLE_TAG} \
     --single-branch \
