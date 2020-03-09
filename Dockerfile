@@ -1,4 +1,4 @@
-ARG DEBIAN_TAG=stretch
+ARG DEBIAN_TAG=buster
 FROM debian:${DEBIAN_TAG}
 
 # Install ansible
@@ -7,9 +7,10 @@ RUN apt-get install -y \
     git \
     build-essential \
     python \
-    python-setuptools
+    python-setuptools \
+    python-pip
 
-ARG ANSIBLE_TAG=v2.8.4
+ARG ANSIBLE_TAG=v2.9.6
 RUN git clone https://github.com/ansible/ansible.git /ansible \
     --branch ${ANSIBLE_TAG} \
     --single-branch \
@@ -18,7 +19,6 @@ RUN git clone https://github.com/ansible/ansible.git /ansible \
 
 WORKDIR /ansible
 RUN bash ./hacking/env-setup
-RUN easy_install pip
 RUN pip install -r ./requirements.txt
 RUN pip install packaging
 RUN make && make install
