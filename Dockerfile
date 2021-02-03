@@ -4,24 +4,11 @@ FROM debian:${DEBIAN_TAG}
 # Install ansible
 RUN apt-get update
 RUN apt-get install -y \
-    git \
-    build-essential \
-    python \
-    python-setuptools \
-    python-pip
+    python3 \
+    python3-pip
 
-ARG ANSIBLE_TAG=v2.9.6
-RUN git clone https://github.com/ansible/ansible.git /ansible \
-    --branch ${ANSIBLE_TAG} \
-    --single-branch \
-    --depth 1 \
-    --recurse-submodules
-
-WORKDIR /ansible
-RUN bash ./hacking/env-setup
-RUN pip install -r ./requirements.txt
-RUN pip install packaging
-RUN make && make install
+ARG ANSIBLE_TAG=2.10.6
+RUN pip3 install ansible==${ANSIBLE_TAG}
 
 # Prevent warnings when running playbooks
 ENV ANSIBLE_LOCALHOST_WARNING False
