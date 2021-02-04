@@ -4,6 +4,7 @@ FROM debian:${DEBIAN_TAG}
 # Install ansible
 RUN apt-get update
 RUN apt-get install -y \
+    openssh-client \
     python3 \
     python3-pip
 
