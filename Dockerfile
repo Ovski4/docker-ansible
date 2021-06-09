@@ -8,7 +8,7 @@ RUN apt-get install -y \
     python3 \
     python3-pip
 
-ARG ANSIBLE_TAG=2.10.6
+ARG ANSIBLE_TAG=4.0.0
 RUN pip3 install ansible==${ANSIBLE_TAG}
 
 # Prevent warnings when running playbooks

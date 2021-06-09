@@ -11,10 +11,10 @@ The tag must exist on the [ansible pip repository](https://pypi.org/project/ansi
 ```bash
 git clone https://github.com/Ovski4/docker-ansible.git
 cd docker-ansible
-docker build -t ovski/ansible:v2.10.6 .
+docker build -t ovski/ansible:v4.0.0 .
 ```
 
-By default, the base container is debian/buster and the ansible version is 2.10.6 .
+By default, the base container is debian/buster and the ansible version is 4.0.0 .
 
 To specify another debian version, and another ansible release, you can do the following:
 
@@ -27,8 +27,8 @@ Usage
 
 ```bash
 # check the version
-docker run ovski/ansible:v2.10.6
+docker run ovski/ansible:v4.0.0
 
 # run a playbook
-docker run -v $(pwd):/var ovski/ansible:2.10.6 ansible-playbook /var/playbook.yml
+docker run -v $(pwd):/var ovski/ansible:4.0.0 ansible-playbook /var/playbook.yml
 ```
