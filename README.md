@@ -14,12 +14,12 @@ cd docker-ansible
 docker build -t ovski/ansible:v2.20.0 .
 ```
 
-By default, the base container is debian/trixie and the ansible version is 13.0.0 .
+By default, the base container is debian/trixie and the ansible version is `2.20.0`.
 
 To specify another debian version, and another ansible release, you can do the following:
 
 ```bash
-docker build -t ovski/ansible:v2.13.3 --build-arg="ANSIBLE_PIP_TAG=13.3.0" --build-arg="DEBIAN_TAG=bullseye"  .
+docker build -t ovski/ansible:v2.20.0 --build-arg="ANSIBLE_PIP_TAG=13.0.0" --build-arg="DEBIAN_TAG=bullseye"  .
 ```
 
 Usage
